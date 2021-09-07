@@ -1,0 +1,11 @@
+python-job:      
+  image: python:latest
+  stage: test
+  script:
+    - echo "Testing environment variables"
+    - echo "\n--------------- PYTHON JOB ---------------" > python_test.txt
+    - python tools/python/test.py >> python_test.txt
+    - echo "--------------- PYTHON JOB ---------------\n" >> python_test.txt
+  artifacts:
+    paths:
+      - python_test.txt
