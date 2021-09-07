@@ -1,0 +1,18 @@
+include:
+  - '/tools/python/.test.yml'
+  - '/tools/AWS/.test.yml'
+  - '/tools/openssl/.test.yml'
+  - '/tools/metaloot/.test.yml'
+  - '/tools/amicontained/.test.yml'
+  - '/tools/docker/.test.yml'
+  - 'tools/analysis/collection.yml'
+
+stages:          # List of stages for jobs, and their order of execution
+  # - aws-test
+  # - python-test
+  # - openssl-test
+  # - amicontained-test
+  # - metaloot-test
+  # - docker-socket-test
+  - test
+  - analyze
