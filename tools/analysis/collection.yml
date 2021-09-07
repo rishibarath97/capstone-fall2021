@@ -1,0 +1,16 @@
+analysis-job:      
+  image: python:latest
+  stage: analyze
+  dependencies: 
+    - aws-job
+    - python-job
+    - openssl-job
+    - amicontained-job
+    - metaloot-job
+    - docker-job
+  script:
+    - mkdir artifact_collection
+    - cat *.txt > artifact_collection/output.txt
+  artifacts:
+    paths:
+      - artifact_collection/output.txt
