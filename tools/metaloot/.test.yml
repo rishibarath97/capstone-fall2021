@@ -1,0 +1,9 @@
+metaloot-job:      
+  image: python:latest
+  stage: test
+  script:
+    - echo "Testing metatool"
+    - echo "metatool_test" > metatool_test.txt
+  artifacts:
+    paths:
+      - metatool_test.txt
