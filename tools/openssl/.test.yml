@@ -1,0 +1,9 @@
+openssl-job:      
+  image: python:latest
+  stage: test
+  script:
+    - echo "Testing SSL/TLS connection"
+    - openssl version > openssl_test.txt
+  artifacts:
+    paths:
+      - openssl_test.txt
